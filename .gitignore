@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ConsoleApp2/bin/Debug/net7.0
+/ConsoleApp2/obj
+/TaskApp.Api/.vs
+/TaskApp.Api/bin/Debug/net7.0
+/TaskApp.Api/obj
+/TaskApp.AzFunc/azurite_workspace
+/TaskApp.Data/bin/Debug/net7.0
+/TaskApp.Data/obj
+/TaskApp.Services/bin/Debug/net7.0
+/TaskApp.Services/obj
+/TaskApp.WorkerService/bin/Debug/net7.0
+/TaskApp.WorkerService/obj
+/TaskModels/obj
