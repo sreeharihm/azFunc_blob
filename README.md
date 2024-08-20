@@ -45,9 +45,6 @@ Application
 
    ![image](https://github.com/user-attachments/assets/7257dcef-ed4e-40e8-a5ac-1dcafa105cbc)
 
-   Graph Mapping
-   
-    ![image](https://github.com/user-attachments/assets/52a6b094-8277-41ba-adca-ea0780a92202)
 
 
 
