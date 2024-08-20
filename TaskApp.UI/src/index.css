@@ -1,0 +1,94 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.date-picker-c {
+    display: flex;
+    flex-direction: row;
+    padding-left: 8px;
+}
+
+.p-l-8 {
+    padding-left: 12px;
+}
+
+button {
+    border-radius: 5px !important;
+    border-width: 1px;
+    background-color: #fff;
+}
+
+.table-container {
+    margin-top: 40px
+}
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1050;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.modal-view {
+    z-index: 100;
+    background: white;
+    position: relative;
+    border-radius: 3px;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.modal-header-view {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-close-button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+}
+
+
+.button-default {
+    background: #247BA0;
+    color: #fff;
+}
+
+.r-link {
+    cursor: pointer;
+}
+.r-link:hover {
+    cursor: pointer;
+    color: #247BA0;
+}

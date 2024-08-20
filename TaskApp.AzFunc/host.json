@@ -1,0 +1,12 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "id": "5c2170e4e9cb424d8710c55481432040"
+}

@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "FetchApiData": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7068"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30167,
+      "useSSL": false
+    }
+  }
+}
