@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/log-list" className="navbar-brand">
+        <a href="/log-list" className="navbar-brand p-l-8">
           Task UI
         </a>
         <div className="navbar-nav mr-auto">

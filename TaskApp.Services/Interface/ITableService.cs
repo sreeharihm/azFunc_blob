@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskApp.Services.ApiModel;
+﻿using TaskApp.Services.ApiModel;
 
 namespace TaskApp.Services.Interface
 {
-    internal interface ITableService
+    public interface ITableService
     {
         Task Insert(ApiLogs apiLogs);
 
-        Task<List<ApiLogs>> Get(DateTime fromDate, DateTime toDate);
+        Task<List<Logs>> Get(DateTime fromDate, DateTime toDate);
     }
 }

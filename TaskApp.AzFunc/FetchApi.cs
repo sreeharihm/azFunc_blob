@@ -9,6 +9,9 @@ using FetchApiData.Model;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using Azure.Storage.Blobs.Models;
+using Azure.Storage.Blobs.Specialized;
+using System.IO;
 
 namespace FetchApiData
 {
@@ -31,6 +34,7 @@ namespace FetchApiData
 
                     var apiLogs = new ApiLogs
                     {
+                        Name="Api-Call",
                         RowKey = currentId.ToString(),
                         PartitionKey = "api-call",
                         StartTime = DateTime.SpecifyKind(StartTime, DateTimeKind.Utc),
@@ -52,6 +56,7 @@ namespace FetchApiData
         {
             BlobContainerClient blobContainerClient = new BlobContainerClient(Environment.GetEnvironmentVariable("AzureWebJobsStorage"), Environment.GetEnvironmentVariable("ContainerName"));
             await blobContainerClient.CreateIfNotExistsAsync();
+            var data = responseMessage.Content.ReadAsStringAsync();
             var responsed = await blobContainerClient.UploadBlobAsync(blobId, responseMessage.Content.ReadAsStream());
             return blobContainerClient.GetBlobClient(blobId).Uri.ToString();
         }

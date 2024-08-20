@@ -15,3 +15,6 @@
 /TaskApp.WorkerService/bin/Debug/net7.0
 /TaskApp.WorkerService/obj
 /TaskModels/obj
+/.vs
+/TaskApp.Api/TaskApp.Api.csproj.user
+/TaskApp.UI/package-lock.json

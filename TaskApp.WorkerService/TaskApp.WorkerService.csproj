@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-WeatherService-9fc262e9-25d0-4df7-ad31-71d22c7799a7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\TaskApp.Api</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>

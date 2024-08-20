@@ -1,12 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TaskApp.Data.Interface;
 using TaskApp.Data.Model;
+using TaskApp.Data.Repository;
 
 namespace TaskApp.Data
 {
@@ -14,7 +11,9 @@ namespace TaskApp.Data
     {
         public static void AddDataRegistration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<TaskAppContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("TaskDbConnection")));
+            services.AddDbContext<TaskDbContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("TaskDbConnection")));
+            services.AddScoped<ICityRepository, CityRepository>();
+            //services.AddSingleton(provider => new TaskDbContext(configuration.GetConnectionString("TaskDbConnection")));
         }
     }
 }

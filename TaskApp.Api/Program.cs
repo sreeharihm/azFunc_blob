@@ -1,5 +1,8 @@
+using TaskApp.Api.Interface;
+using TaskApp.Api.Services;
 using TaskApp.Data;
 using TaskApp.Services;
+using TaskApp.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -11,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddServiceRegistration();
 builder.Services.AddDataRegistration(configuration);
+builder.Services.AddTransient<ITaskService, TaskService>();
+builder.Services.AddTransient<ITableService, TableService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(

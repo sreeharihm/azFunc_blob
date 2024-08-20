@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using TaskApp.Data;
-using TaskApp.Services.ApiModel;
+﻿using Microsoft.AspNetCore.Mvc;
+using TaskApp.Api.Interface;
 
 namespace TaskApp.Api.Controllers
 {
@@ -9,67 +7,31 @@ namespace TaskApp.Api.Controllers
     [ApiController]
     public class TaskController : ControllerBase
     {
+        private readonly ITaskService _taskService;
+        public TaskController(ITaskService taskService) 
+        {
+            _taskService = taskService;
+        }
         [HttpGet]
-        [Route("/Task1")]
+        [Route("/task1")]
         public async Task<IActionResult> GetTask1(DateTime fromDate, DateTime toDate, CancellationToken cancellationToken)
         {
-
-            return Ok(await Task.Run(() =>
-             {
-
-                 return Enumerable.Range(1, 5).Select(index => new ApiLogs
-                 {
-                     EndTime = DateTime.Now,
-                     ResponseData = "",
-                     Name = "Test",
-                     StartTime = DateTime.Now,
-                 }).ToList();
-             }));
+            return Ok(await _taskService.Task1(fromDate, toDate));
         }
 
         [HttpGet]
-        [Route("/Task2")]
+        [Route("/task1-blobdata")]
+        public async Task<IActionResult> GetTaskDetails(string guid, CancellationToken cancellationToken)
+        {
+            return Ok(await _taskService.Task1(guid));
+        }
+
+        [HttpGet]
+        [Route("/task2")]
         public async Task<IActionResult> GetTask2(DateTime datetime, CancellationToken cancellationToken)
         {
-
-            return Ok(await Task.Run(() =>
-            {
-                return new List<WeatherDto>
-                {
-                    new WeatherDto
-                    {
-                        City="Riga",
-                        MaxTemp =22,
-                        MinTemp =17
-                    },
-                    new WeatherDto
-                    {
-                        City="Vilinus",
-                        MaxTemp =23,
-                        MinTemp =16
-                    },
-                    new WeatherDto
-                    {
-                        City="Tallin",
-                        MaxTemp =24,
-                        MinTemp =17
-                    },
-                    new WeatherDto
-                    {
-                        City="Berlin",
-                        MaxTemp =25,
-                        MinTemp =18
-                    },
-                     new WeatherDto
-                    {
-                        City="Stockholm",
-                        MaxTemp =21,
-                        MinTemp =19
-                    },
-                };
-            }));
+            return Ok(await _taskService.Task2(datetime));
         }
     }
-
 }
 

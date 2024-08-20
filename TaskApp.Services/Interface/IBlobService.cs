@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using TaskApp.Services.ApiModel;
 namespace TaskApp.Services.Interface
 {
-    internal interface IBlobService
+    public interface IBlobService
     {
         Task<string> Insert(string blobId, HttpResponseMessage responseMessage);
+        Task<BlobDetails> Get(string blobId);
     }
 }

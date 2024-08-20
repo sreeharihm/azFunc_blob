@@ -1,0 +1,8 @@
+version: '3'
+services:
+  dockerapp:
+    image: azurefunctionapp
+    build: 
+      dockerfile: TaskApp.AzFunc\Dockerfile
+    ports:
+      - "3500:80"

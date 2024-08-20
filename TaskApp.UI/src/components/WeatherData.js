@@ -35,14 +35,14 @@ const WeatherData = () =>{
     }
     return (
         <div className="list row">
-            <div className="col-md-6">
+            <div className="col-md-6 ">
                 <h4>Weather Data</h4>
             </div>
             <div className="col-md-8">
                 <div className="input-group mb-3">
-                <DatePicker selected={date}  onChange={(date) => setDate(date)} />
-                    <div className="input-group-append">
-                        <button className="btn btn-outline-secondary" type="button" onClick={findByDate}>Search</button>
+                <DatePicker maxDate={date} selected={date}  onChange={(date) => setDate(date)} />
+                    <div className="input-group-append p-l-8">
+                        <button  type="button" onClick={findByDate}>Search</button>
                     </div>
                 </div>
             </div>
